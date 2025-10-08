@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moussa Kabalan — Portfolio</title>
+  <meta name="description" content="Personal portfolio of Your Name: projects, experience, and contact." />
+  <meta property="og:title" content="Your Name — Portfolio" />
+  <meta property="og:description" content="Projects, experience, and contact." />
+  <meta property="og:type" content="website" />
+
+  <!-- Icons (optional) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>✨</text></svg>">
+
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #111820;
+      --text: #e8eef5;
+      --muted: #a7b3c1;
+      --acc: #5eead4; /* teal-ish */
+      --acc-2: #60a5fa; /* blue-ish */
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 90% -10%, #122034 0, transparent 60%) , var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--acc); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 1000px;
+      padding: 24px; margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 24px 0;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+      font-weight: 700; letter-spacing: 0.5px;
+    }
+    .logo { width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(135deg, var(--acc), var(--acc-2)); box-shadow: var(--shadow); }
+    nav a { margin-left: 16px; font-weight: 600; color: var(--muted); }
+    nav a:hover { color: var(--text); }
+
+    /* Hero */
+    .hero {
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: center;
+      padding: 28px; background: linear-gradient(180deg, rgba(96,165,250,0.08), rgba(94,234,212,0.06));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero h1 { font-size: clamp(28px, 4vw, 44px); line-height: 1.15; margin: 0 0 12px; }
+    .hero p { color: var(--muted); margin: 0 0 20px; }
+    .cta {
+      display: inline-flex; align-items: center; gap: 10px; padding: 12px 16px;
+      background: linear-gradient(135deg, var(--acc), var(--acc-2));
+      color: #001018; border-radius: 12px; font-weight: 700; box-shadow: var(--shadow);
+    }
+    .subcta { margin-left: 12px; color: var(--muted); }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    /* Sections */
+    section { margin: 48px 0; }
+    section h2 { margin: 0 0 16px; font-size: 22px; letter-spacing: 0.3px; }
+
+    /* Projects grid */
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .project { display: flex; flex-direction: column; gap: 8px; }
+    .project h3 { margin: 0; font-size: 18px; }
+    .tagrow { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag { font-size: 12px; padding: 4px 8px; border-radius: 999px; background: rgba(94,234,212,0.15); border: 1px solid rgba(94,234,212,0.3); color: var(--text); }
+
+    /* About + Contact */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    /* Footer */
+    footer { color: var(--muted); font-size: 14px; padding: 32px 0 64px; text-align: center; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr 1fr; }
+      .two-col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      nav { display:none; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>Your Name</div>
+      </div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub ↗</a>
+      </nav>
+    </header>
+
+    <section class="hero card">
+      <div>
+        <h1>Building clean, fast, user‑first experiences.</h1>
+        <p>Software engineer specializing in modern web apps, game systems, and delightful UX. I turn fuzzy ideas into shipped products.</p>
+        <a class="cta" href="#projects">See projects</a>
+        <span class="subcta">or <a href="#contact">get in touch</a></span>
+      </div>
+      <div class="card" style="min-height: 200px; display:flex; align-items:center; justify-content:center; text-align:center;">
+        <div>
+          <strong>Quick facts</strong>
+          <ul style="margin:10px 0 0 18px; text-align:left; color:var(--muted)">
+            <li>JavaScript, Python, Lua</li>
+            <li>React, Node, Roblox (Knit/Comm)</li>
+            <li>Interested in HCI, systems, tooling</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Featured projects</h2>
+      <div class="grid">
+        <article class="project card">
+          <h3>Project One</h3>
+          <p>A short sentence describing what it does and why it’s useful. Include notable metrics or outcomes.</p>
+          <div class="tagrow">
+            <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Vite</span>
+          </div>
+          <p><a href="#">Live Demo</a> · <a href="#">Source</a></p>
+        </article>
+        <article class="project card">
+          <h3>Project Two</h3>
+          <p>Another concise description. Mention performance, scale, or an interesting technical bit.</p>
+          <div class="tagrow">
+            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Postgres</span>
+          </div>
+          <p><a href="#">Live Demo</a> · <a href="#">Source</a></p>
+        </article>
+        <article class="project card">
+          <h3>Project Three</h3>
+          <p>Highlight impact or a unique feature. Keep it skimmable.</p>
+          <div class="tagrow">
+            <span class="tag">Lua</span><span class="tag">Roblox</span><span class="tag">Networking</span>
+          </div>
+          <p><a href="#">Trailer</a> · <a href="#">Devlog</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="two-col">
+      <div class="card">
+        <h2>About</h2>
+        <p>Hey! I’m <strong>Your Name</strong>. I enjoy building tools and experiences that feel fast and intuitive. Recently I’ve been working on game systems, scalable backends, and playful UI. I care about craft, clarity, and iteration.</p>
+      </div>
+      <div class="card">
+        <h2>Skills</h2>
+        <ul style="margin:0 0 0 18px; color: var(--muted)">
+          <li>Frontend: React, Next.js, Tailwind, Vite</li>
+          <li>Backend: Node, FastAPI, PostgreSQL</li>
+          <li>Other: Roblox (Knit/Comm), GitHub Actions</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>DMs open. Reach me at <a href="mailto:hello@example.com">hello@example.com</a> or on <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Your Name. Built with GitHub Pages.
+    </footer>
+  </div>
+
+  <script>
+    // Simple client-side nicety
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
