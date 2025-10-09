@@ -12,84 +12,47 @@
 
   <style>
     :root {
-      --bg: #0b0f14;
-      --card: #111820;
-      --text: #e8eef5;
-      --muted: #a7b3c1;
-      --acc: #5eead4;
-      --acc-2: #60a5fa;
-      --radius: 16px;
-      --shadow: 0 10px 30px rgba(0,0,0,0.25);
+      --bg: #0b0f14; --card: #111820; --text: #e8eef5; --muted: #a7b3c1;
+      --acc: #5eead4; --acc-2: #60a5fa; --radius: 16px; --shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif;
-      background: radial-gradient(1200px 800px at 90% -10%, #122034 0, transparent 60%) , var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    a { color: var(--acc); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
+    * { box-sizing: border-box; } html, body { height: 100%; }
+    body { margin: 0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter,sans-serif;
+           background: radial-gradient(1200px 800px at 90% -10%, #122034 0, transparent 60%), var(--bg);
+           color: var(--text); line-height: 1.6; }
+    a { color: var(--acc); text-decoration: none; } a:hover { text-decoration: underline; }
     .container { max-width: 1000px; padding: 24px; margin: 0 auto; }
 
-    header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 24px 0;
-    }
-    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.5px; }
-    .logo {
-      width: 42px; height: 42px; border-radius: 12px;
-      background: linear-gradient(135deg, var(--acc), var(--acc-2)); box-shadow: var(--shadow);
-    }
-    nav a { margin-left: 16px; font-weight: 600; color: var(--muted); }
-    nav a:hover { color: var(--text); }
+    header { display: flex; align-items: center; justify-content: space-between; padding: 24px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .5px; }
+    .logo { width: 42px; height: 42px; border-radius: 12px; background: linear-gradient(135deg,var(--acc),var(--acc-2)); box-shadow: var(--shadow); }
+    nav a { margin-left: 16px; font-weight: 600; color: var(--muted); } nav a:hover { color: var(--text); }
 
-    .hero {
-      display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 32px; align-items: center;
-      padding: 28px; background: linear-gradient(180deg, rgba(96,165,250,0.08), rgba(94,234,212,0.06));
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-text h1 { font-size: clamp(28px, 4vw, 42px); line-height: 1.2; margin: 0 0 12px; }
+    .hero { display: grid; grid-template-columns: 1.3fr .7fr; gap: 32px; align-items: center;
+            padding: 28px; background: linear-gradient(180deg, rgba(96,165,250,.08), rgba(94,234,212,.06));
+            border: 1px solid rgba(255,255,255,.06); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .hero-text h1 { font-size: clamp(28px,4vw,42px); line-height: 1.2; margin: 0 0 12px; }
     .hero-text p { color: var(--muted); margin: 0 0 16px; }
+    .hero img { width: 300px; height: 300px; border-radius: 50%; object-fit: cover; border: 3px solid var(--acc); margin: 0 auto; display: block; }
+    .cta { display: inline-flex; align-items: center; gap: 10px; padding: 12px 16px;
+           background: linear-gradient(135deg,var(--acc),var(--acc-2)); color: #001018; border-radius: 12px;
+           font-weight: 700; box-shadow: var(--shadow); }
+    .cta-row { display:flex; gap:12px; flex-wrap:wrap; }
 
-    .hero img {
-      width: 160px; height: 160px; border-radius: 50%;
-      object-fit: cover; border: 3px solid var(--acc);
-      margin: 0 auto; display: block;
-    }
-
-    .cta {
-      display: inline-flex; align-items: center; gap: 10px; padding: 12px 16px;
-      background: linear-gradient(135deg, var(--acc), var(--acc-2));
-      color: #001018; border-radius: 12px; font-weight: 700; box-shadow: var(--shadow);
-    }
-
-    section { margin: 48px 0; }
-    h2 { margin-bottom: 16px; font-size: 22px; letter-spacing: 0.3px; }
-
-    .card {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 20px;
-    }
+    section { margin: 48px 0; } h2 { margin-bottom: 16px; font-size: 22px; letter-spacing: .3px; }
+    .card { background: var(--card); border: 1px solid rgba(255,255,255,.06); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; }
 
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
     .project h3 { margin: 0; font-size: 18px; }
     .tagrow { display: flex; flex-wrap: wrap; gap: 8px; }
-    .tag { font-size: 12px; padding: 4px 8px; border-radius: 999px;
-      background: rgba(94,234,212,0.15); border: 1px solid rgba(94,234,212,0.3); }
+    .tag { font-size: 12px; padding: 4px 8px; border-radius: 999px; background: rgba(94,234,212,.15); border: 1px solid rgba(94,234,212,.3); }
+
+    .cert-list { display: grid; gap: 12px; }
+    .cert { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 16px; border-radius: 12px;
+            background: rgba(96,165,250,.07); border: 1px solid rgba(255,255,255,.06); }
+    .cert small { color: var(--muted); }
 
     footer { color: var(--muted); font-size: 14px; padding: 32px 0 64px; text-align: center; }
-
-    @media (max-width: 800px) { .hero { grid-template-columns: 1fr; text-align: center; } }
+    @media (max-width: 800px) { .hero { grid-template-columns: 1fr; text-align:center; } .cta-row { justify-content:center; } }
   </style>
 </head>
 
@@ -102,30 +65,33 @@
       </div>
       <nav>
         <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <a href="https://github.com/moussakabalan" target="_blank">GitHub ↗</a>
       </nav>
     </header>
 
-    <section class="hero card">
+     <section class="hero card">
       <div class="hero-text">
-        <h1>👋 Hello! …and welcome to my GitHub page!</h1>
-        <p>I still have a lot of tidying up to do here, so bear with me! 🧹</p>
+        <h1>👋 Hello! …and welcome to my Portfolio!</h1>
+        <p>I still have a lot of tidying up to do here, so bear with me! 🧹 </p>
+        <p>I will be updating my GitHub and Portfolio throughout the coming weeks with newer and better projects! Stay tuned! 😉 </p>
         <p>🎓 Computer Science & Engineering Undergraduate<br>💻 Software Engineer | 🔐 Cybersecurity Enthusiast</p>
-        <a class="cta" href="#projects">Explore My Work</a>
+        <div class="cta-row">
+          <a class="cta" href="#projects">Explore My Work</a>
+          <a class="cta" href="https://www.linkedin.com/in/moussakabalan/" download>Download Résumé</a>
+        </div>
       </div>
-      <div>
-        <img src="assets/profile.jpg" alt="Profile photo of Moussa Kabalan">
-      </div>
+      <div><img src="https://media.licdn.com/dms/image/v2/D5603AQG-EsqGlQ_BHw/profile-displayphoto-crop_800_800/B56ZnE4Tn3KAAQ-/0/1759944719803?e=1762992000&v=beta&t=7x4xNC6zGRuLGlHDytCNt8Xg4tiIEDXD4QtLXC9bDP0" alt="Profile Photo"></div>
     </section>
 
     <section id="about">
       <div class="card">
         <h2>🚀 About Me</h2>
-        <p>I’m Moussa (Moose), a Computer Science & Engineering undergraduate with a passion for backend engineering and systems design. I first got my start in large-scale development through Roblox, where I learned to build and optimize systems that scale — reaching millions of players worldwide.</p>
+        <p>I’m Moussa (Moose), a Computer Science & Engineering undergraduate with a passion for backend engineering and systems design. I first got my start in large-scale development through Roblox, where I learned to build and optimize systems that scale — <b>reaching millions of players worldwide!</b> 🌍</p>
         <p>These days, I’m exploring cybersecurity and reverse engineering, diving deep into how things work “under the hood” to make software faster, more reliable, and more secure.</p>
-        <p>💡 Fun fact: I love tinkering with electronics — taking them apart to understand how hardware and logic blend together!</p>
+        <p>💡 Fun fact: I love tinkering with electronics; taking them apart to understand how hardware and logic blend together!</p>
       </div>
 
       <div class="card" style="margin-top:16px;">
@@ -139,14 +105,14 @@
       <h2>🧩 Featured Projects</h2>
       <div class="grid">
         <article class="project card">
-          <h3>Matchmaking API</h3>
+          <h3>Redis-Backed Matchmaking API (Flask) + Match Worker</h3>
           <p>Lightweight Python matchmaking service that handles real-time player queuing and balancing across sessions — used for scaling multiplayer games.</p>
-          <div class="tagrow"><span class="tag">Python</span><span class="tag">Sockets</span><span class="tag">Server</span></div>
+          <div class="tagrow"><span class="tag">Python</span><span class="tag">Redis</span><span class="tag">Server</span></div>
           <p><a href="https://github.com/moussakabalan/matchmaking-api" target="_blank">Source ↗</a></p>
         </article>
 
         <article class="project card">
-          <h3>Socket Programming — YAMotD</h3>
+          <h3>Socket Programming w/ YAMotD</h3>
           <p>Client–server messaging system demonstrating TCP communication. Includes commands like MSGGET, MSGSTORE, QUIT, and SHUTDOWN.</p>
           <div class="tagrow"><span class="tag">Python</span><span class="tag">Sockets</span><span class="tag">Networking</span></div>
           <p><a href="https://github.com/moussakabalan/socket-programming-yamotd" target="_blank">Source ↗</a></p>
@@ -165,6 +131,27 @@
           <div class="tagrow"><span class="tag">Python</span><span class="tag">Threads</span><span class="tag">Concurrency</span></div>
           <p><a href="https://github.com/moussakabalan/concurrent-processing-multiprocessing" target="_blank">Source ↗</a></p>
         </article>
+
+        <article class="project card" style="text-align:center; padding:32px;">
+          <h3>More Projects are Underway!</h3>
+          <p>While I have not showed all my projects here, it doesn't mean I'm finished!</p>
+          <div style="display:inline-block; padding:10px 16px; border-radius:10px; background:rgba(96,165,250,.07); border:1px solid rgba(255,255,255,.06); color:#a7b3c1;">
+          Check out my GitHub for more!
+          </div>
+          <p><a href="https://github.com/moussakabalan/" target="_blank">Take me there! ↗</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <h2>🎖️ Certifications</h2>
+      <div class="cert-list">
+        <div class="card" style="text-align:center; padding:32px;">
+          <div style="display:inline-block; padding:10px 16px; border-radius:10px; background:rgba(96,165,250,.07); border:1px solid rgba(255,255,255,.06); color:#a7b3c1;">
+            🛠️ In Progress! Check back soon.
+          </div>
+        </div>
+        <!-- Add more as needed -->
       </div>
     </section>
 
